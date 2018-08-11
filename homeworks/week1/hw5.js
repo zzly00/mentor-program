@@ -1,4 +1,5 @@
 export const add = (a, b) => {
+
 	var a = a.split("").join("");
 	var b = b.split("").join("");
 	var lenA = a.length;
@@ -6,7 +7,7 @@ export const add = (a, b) => {
 	var len = Math.max(lenA, lenB);
 	var j = 0;
 	var total = [];
-	var sum, arrA, arrB;
+	var sum, arrA, arrB, ans;
 
 	//長度不足的文字補0
 	if(lenA>lenB){
@@ -38,6 +39,10 @@ export const add = (a, b) => {
 			total.push(sum);
 			j = 0;
 		}
+	}
+	//判斷最後一個數字相加是否大於9，若大於9，則加1
+	if(sum > 9){
+		total.push("1")
 	}
 
 	//將加總後的陣列反轉，並轉為文字
